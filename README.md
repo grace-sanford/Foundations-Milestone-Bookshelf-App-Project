@@ -4,7 +4,7 @@
 General Code
 
     Bookshelf is refactored so that map is used to generate DOM elements from the array of books. check
-    Design choices are explained and documented in comments. 
+    Design choices are explained and documented in comments. check
     DOM elements are styled via CSS. check
 
 Favorite Feature

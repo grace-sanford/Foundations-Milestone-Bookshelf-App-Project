@@ -32,6 +32,7 @@ class Book {
     return names;
   }
 
+  
   /**
    * `getFavBook` toogles the favorite property from false (default) to true.
    */
