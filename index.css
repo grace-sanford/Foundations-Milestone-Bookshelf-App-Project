@@ -1,1 +1,17 @@
+/* Basic styling for the website */
+.h1 {
+    display: flex;
+    justify-content: center;
+}
 
+
+.book {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  
+    width: 78rem;
+    border: 1px solid black;
+    padding: 1rem;
+  }
