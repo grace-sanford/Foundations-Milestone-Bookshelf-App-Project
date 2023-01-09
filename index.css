@@ -4,6 +4,10 @@
     justify-content: center;
 }
 
+nav {
+    display: flex;
+    gap: 2rem;
+  }
 
 .book {
     list-style-type: none;
@@ -11,7 +15,7 @@
     justify-content: center;
     gap: 1rem;
   
-    width: 80rem;
+    width: 60rem;
     border: 1px solid black;
     padding: 1rem;
   }
