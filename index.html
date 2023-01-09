@@ -1,24 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundations.Assessment.BookshelfSorting</title>
+    <!-- Link to CSS style sheet -->
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- User Interface/Input Portion of the Page -->
+    <nav>
+      <h1 class = "header">Library for Learning</h1>
+      <section class="search">
+        <input placeholder="Search" />
+        <button class="searchBtn">Search</button>
+      </section>
+      <section class="sort">
+        <label>Sort by</label>
+        <select class="sortBy">
+          <option value="titleaz">Title A-Z</option>
+          <option value="titleza">Title Z-A</option>
+        </select>
+      </section>
+      <section>
+        You have <span class="favCount">0</span> favorite books.
+        <button class="favUpdateBtn">Update</button>
+      </section>
+    </nav>
+    <!-- Library, book list Portion of the Page -->
+    <main id="app">
+      <ul class="books"></ul>
+    </main>
+    <!-- Scripts portion of the page. NOTE: The order of the scripts matters! -->
+    <script src="js/book-data.js"></script>
+    <script src="js/book.js"></script>
+    <script src="js/bookshelf.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
+
+<!-- From Friday 1-6-23 -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foundations.Assessment.BookshelfSorting.Sanford</title>
-    <!-- Link to css style sheet -->
+    Link to css style sheet
     <link rel = "stylesheet" href = "index.css"/>
 </head>
 <body>
-    <main>
+    <nav>
         <section class = "ui">
             <input class = "searchInput" type="text" placeholder="Search for a book"></input>
             <button class = "button">Search</button>
         </section>
+    <main>
         <ul class = "books"></ul>
     </main>
-    <!-- Link to scripts. Order matters! -->
-    <script src="book-data.js"></script>
-    <script src="book.js"></script>
+    Link to scripts. Order matters!
+    <script src="js/book-data.js"></script>
+    <script src="js/book.js"></script>
+    <script src="js/bookshelf.js"></script>
     <script src = "index.js"></script>
 </body>
-</html>
+</html> -->
