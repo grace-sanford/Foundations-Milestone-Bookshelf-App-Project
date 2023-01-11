@@ -33,3 +33,24 @@ nav {
     border: 1px solid black;
     padding: 1rem;
   }
+
+  /* styling for horizontal footer */
+.footer {
+  display: flex;
+  margin-top: auto;
+  flex-direction: flex-end;
+  position: relative;
+  background-color: rgba(70, 70, 70, 0.5);
+  height: 4vw;
+  justify-content: center;
+}
+
+.footerText {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: "Lora", serif;
+  font-size: 12px;
+  width: 100%;
+  color: black;
+}

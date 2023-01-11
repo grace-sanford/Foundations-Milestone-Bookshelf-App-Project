@@ -4,6 +4,8 @@
  * @param {string} language the language the book is written in
  * @param {string[]} subject  array of book topics
  * @param {string} title title of the book
+ * @param {boolean} favorite user's opinion about the book
+ * @param {string []} comments array of comments about the book
  */
 function Book(authors, language, subject, title) {
   this.authors = authors;
@@ -11,11 +13,12 @@ function Book(authors, language, subject, title) {
   this.subject = subject;
   this.title = title;
   this.isFavorite = false;
+  this.comments = [];
 
   /**
    * * `getAuthorName()` takes an array containing the author's last name followed by a comma, followed by the author's first name.
    * @param {array} this.authors the given array
-   * @returns {string} a string of the author's first name, a space, and the 
+   * @returns {string} a string of the author's first name, a space, and the
    * author's last name
    */
 
@@ -33,7 +36,7 @@ function Book(authors, language, subject, title) {
       }
     }
     return names;
-  }
+  };
 
   /**
    * @returns a list item representing this Book
@@ -43,15 +46,17 @@ function Book(authors, language, subject, title) {
     // Create a DOM element that represents a list item
     const li = document.createElement("li");
     // Give the new element a class name
-    li.classList.add("book")
+    li.classList.add("book");
     // Append the item with this book's title
     li.textContent = `${this.title} by ${this.getAuthorNames()}`;
 
+
+    //------------------------------------------------------
     // Create favorite button
     // Create a DOM favorite Button element
     const favButton = document.createElement("button");
     // Add text to the button
-    favButton.textContent = this.isFavorite ? "*" : "-";
+    favButton.textContent = this.isFavorite ? "❤️" : "♡";
     // Append the button to the DOM list element we just created
     li.append(favButton);
 
@@ -59,15 +64,56 @@ function Book(authors, language, subject, title) {
     // Add an event listener to the fav button. If the isFavorite property is true, return the new button setting.
     favButton.addEventListener("click", () => {
       this.isFavorite = !this.isFavorite;
-      favButton.textContent = this.isFavorite ? "*" : "-";
+      favButton.textContent = this.isFavorite ? "❤️" : "♡";
     });
+
+
+    //------------------------------------------------------
+    //Comment button
+
+    const commentBtn = document.createElement("button");
+    commentBtn.textContent = "Comment";
+
+    const commentContainer = document.createElement("div");
+    commentContainer.append(commentBtn);
+    li.append(commentContainer);
+
+    // Add an event listener to the comment button
+    commentBtn.addEventListener("click", () => {
+      //reveals a text input element
+      const commentInputElement = document.createElement("input");
+      commentInputElement.placeholder = "Comment";
+      commentInputElement.classList.add("commentInput");
+      commentInputElement.maxLength = 280;
+      commentContainer.append(commentInputElement);
+
+      //and a "send button"
+      const sendBtn = document.createElement("button");
+      sendBtn.textContent = ">";
+      commentContainer.append(sendBtn);
+
+      sendBtn.addEventListener("click", () => {
+        //create new comment property to add to comments array in book object
+        const userInput = commentInputElement.value;
+
+        if (userInput.length > 280) {
+          alert("Input is too long!");
+        }
+        this.comments.push(userInput);
+        console.log(bookshelf);
+
+        const comment = document.createElement("p")
+        comment.textContent = userInput;
+        commentContainer.append(comment)
+      });
+    });
+
+    
 
     // Return the list element
     return li;
   };
 }
-
-
 
 // From Friday 1-6-22
 
@@ -105,7 +151,6 @@ function Book(authors, language, subject, title) {
 //     return names;
 //   }
 
-  
 //   /**
 //    * `getFavBook` toogles the favorite property from false (default) to true.
 //    */
@@ -129,7 +174,7 @@ function Book(authors, language, subject, title) {
 
 //     const favBtn = document.createElement("button");
 //     favBtn.textContent = "*";
-//     favBtn.addEventListener("click", () => {  
+//     favBtn.addEventListener("click", () => {
 //       const bookshelf = getBookshelf();
 //       const updatedBookshelf = () => this.favorite = true;
 //       setBookshelf(updatedBookshelf);
