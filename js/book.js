@@ -50,7 +50,6 @@ function Book(authors, language, subject, title) {
     // Append the item with this book's title
     li.textContent = `${this.title} by ${this.getAuthorNames()}`;
 
-
     //------------------------------------------------------
     // Create favorite button
     // Create a DOM favorite Button element
@@ -67,6 +66,14 @@ function Book(authors, language, subject, title) {
       favButton.textContent = this.isFavorite ? "❤️" : "♡";
     });
 
+    //------------------------------------------------------
+    //Remove button
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "-";
+    removeBtn.addEventListener("click", () => {
+      //Remove link and re-render
+    });
+    li.prepend(removeBtn);
 
     //------------------------------------------------------
     //Comment button
@@ -75,6 +82,7 @@ function Book(authors, language, subject, title) {
     commentBtn.textContent = "Comment";
 
     const commentContainer = document.createElement("div");
+    commentContainer.classList.add("commentContainer");
     commentContainer.append(commentBtn);
     li.append(commentContainer);
 
@@ -100,15 +108,13 @@ function Book(authors, language, subject, title) {
           alert("Input is too long!");
         }
         this.comments.push(userInput);
-        console.log(bookshelf);
 
-        const comment = document.createElement("p")
+        const comment = document.createElement("p");
+        comment.classList.add("comments");
         comment.textContent = userInput;
-        commentContainer.append(comment)
+        commentContainer.append(comment);
       });
     });
-
-    
 
     // Return the list element
     return li;
