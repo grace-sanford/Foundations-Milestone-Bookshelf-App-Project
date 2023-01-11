@@ -4,8 +4,22 @@
     justify-content: center;
 }
 
+.links {
+  display: flex;
+  background-color: rgb(204, 204, 204);
+  align-content: center;
+}
+
+.link {
+  display: flex;
+  margin-right: 10rem;
+  text-decoration: none;
+  font: solid black;
+}
+
 nav {
     display: flex;
+    flex-direction: column;
     gap: 2rem;
   }
 
