@@ -7,11 +7,13 @@
     <title>Foundations.Assessment.BookshelfSorting</title>
     <!-- Link to CSS style sheet -->
     <link rel="stylesheet" href="index.css" />
+    <!-- Link font style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- User Interface/Input Portion of the Page -->
     <nav>
-      <h1 class = "header">Library for Learning</h1>
+      <h1 class="header">Bookshelf for Learning</h1>
       <header class="links">
         <a class="link" href="index.html">Home</a>
         <a class="link" href="about.html">About</a>
@@ -20,12 +22,13 @@
       <section class="search">
         <input placeholder="Search" />
         <button class="searchBtn">Search</button>
+      </section>
+      <section class="addBooks">
         <input placeholder="Title" class="title" />
         <input placeholder="Author" class="author" />
         <input placeholder="Language" class="language" />
         <input placeholder="Subject" class="subject" />
         <button class="addBtn">Add</button>
-        </section>
       </section>
       <section class="sort">
         <label>Sort by</label>
@@ -44,7 +47,10 @@
       <ul class="books"></ul>
     </main>
     <footer class="footer">
-      <span class="footerText">Jan 2023 Grace Hopper Foundations Milestone: Bookshelf App Project, by Grace Sanford</span>
+      <span class="footerText"
+        >Jan 2023 Grace Hopper Foundations Milestone: Bookshelf App Project, by
+        Grace Sanford</span
+      >
     </footer>
     <!-- Scripts portion of the page. NOTE: The order of the scripts matters! -->
     <script src="js/book-data.js"></script>
@@ -53,32 +59,3 @@
     <script src="index.js"></script>
   </body>
 </html>
-
-<!-- From Friday 1-6-23 -->
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundations.Assessment.BookshelfSorting.Sanford</title>
-    Link to css style sheet
-    <link rel = "stylesheet" href = "index.css"/>
-</head>
-<body>
-    <nav>
-        <section class = "ui">
-            <input class = "searchInput" type="text" placeholder="Search for a book"></input>
-            <button class = "button">Search</button>
-        </section>
-    <main>
-        <ul class = "books"></ul>
-    </main>
-    Link to scripts. Order matters!
-    <script src="js/book-data.js"></script>
-    <script src="js/book.js"></script>
-    <script src="js/bookshelf.js"></script>
-    <script src = "index.js"></script>
-</body>
-</html> -->

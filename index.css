@@ -1,27 +1,75 @@
+/* Load in font style */
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+
 /* Basic styling for the website */
-.h1 {
-    display: flex;
-    justify-content: center;
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
+.header {
+    display: flex;
+    justify-content: center;
+    color: #335816;
+    font-size: 36px;
+    margin-bottom: auto;
+    font-family: "Lora", serif;
+}
+
+/* Styling for header links / Navigation */
 .links {
   display: flex;
   background-color: rgb(204, 204, 204);
-  align-content: center;
+  justify-content: center;
+  justify-content: space-evenly;
 }
 
-.link {
-  display: flex;
-  margin-right: 10rem;
+a {
+  outline: none;
   text-decoration: none;
-  font: solid black;
+  padding: 2px 1px 0;
+  font-family: "Lora", serif;
 }
 
-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
+a:link {
+  color: #265301;
+  font-family: "Lora", serif;
+}
+
+a:visited {
+  color: #2d4a16;
+  font-family: "Lora", serif;
+}
+
+a:focus {
+  background: #bae498;
+  font-family: "Lora", serif;
+}
+
+a:hover {
+  color: #142507;
+  font-family: "Lora", serif;
+}
+
+a:active {
+  background: #265301;
+  color: #cdfeaa;
+  font-family: "Lora", serif;
+}
+
+/* Styling for user input portion of the page */
+
+.addBooks {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+}
 
 .book {
     list-style-type: none;
@@ -29,19 +77,21 @@ nav {
     justify-content: center;
     gap: 1rem;
   
-    width: 60rem;
+    width: 70rem;
     border: 1px solid black;
     padding: 1rem;
+    color: #335816;
+    font-family: "Lora", serif;
   }
 
   /* styling for horizontal footer */
 .footer {
   display: flex;
   margin-top: auto;
-  flex-direction: flex-end;
   position: relative;
   background-color: rgba(70, 70, 70, 0.5);
   height: 4vw;
+  flex-direction: column;
   justify-content: center;
 }
 
