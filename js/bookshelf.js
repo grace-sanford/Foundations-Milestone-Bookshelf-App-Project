@@ -5,7 +5,9 @@
  * @param {Book[]} books an optional array of Books
  */
 
-// A constructor function accepts arguments, but does not RETURN anything. It uses `this` to define properties and methods. We use the `new` keyword to use this function.
+// A constructor function accepts arguments, but does not RETURN anything. 
+// It uses `this` to define properties and methods. We use the `new` keyword to use this function.
+// It takes parameters in the same way a class does, through its constructor.
 
 function Bookshelf(htmlElement, books = []) {
   this.books = books;
@@ -45,7 +47,7 @@ function Bookshelf(htmlElement, books = []) {
   };
 
   /**
-   * Remove book according to it's index
+   * Remove a book according to it's position in the Bookshelf.
    */
   this.removeBook = function (book) {
     const idx = this.books[book];
@@ -71,6 +73,7 @@ function Bookshelf(htmlElement, books = []) {
   };
 
   /**
+   * Count the number of favorite books
    * @returns the number of favorite books
    */
   this.countFavoriteBooks = function () {

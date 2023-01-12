@@ -7,14 +7,14 @@
  * @param {boolean} favorite user's opinion about the book
  * @param {string []} comments array of comments about the book
  */
-function Book(authors, language, subject, title, comments, books) {
+
+function Book(authors, language, subject, title, comments) {
   this.authors = authors;
   this.language = language;
   this.subject = subject;
   this.title = title;
   this.isFavorite = false;
   this.comments = [];
-  this.books = books;
 
   /**
    * * `getAuthorName()` takes an array containing the author's last name followed by a comma, followed by the author's first name.
@@ -43,7 +43,6 @@ function Book(authors, language, subject, title, comments, books) {
    * @returns a list item representing this Book
    */
   this.render = function () {
-    /* NOTE: Change render! This is currently a barebones template. */
     // Create a DOM element that represents a list item
     const li = document.createElement("li");
     // Give the new element a class name
@@ -53,7 +52,8 @@ function Book(authors, language, subject, title, comments, books) {
 
     //------------------------------------------------------
     // Create favorite button
-    // Create a DOM favorite Button element
+
+    // Create a DOM favorite button element
     const favButton = document.createElement("button");
     // Add text to the button
     favButton.textContent = this.isFavorite ? "❤️" : "♡";
@@ -70,46 +70,47 @@ function Book(authors, language, subject, title, comments, books) {
     //------------------------------------------------------
     // Remove button
 
+    // Create a DOM remove button element
     const removeBtn = document.createElement("button");
-    removeBtn.classList.add(".removeBtn")
     removeBtn.textContent = "-";
 
+    // Add an event listener to the remove button. When clicked, call the remove book method from the Bookshelf funciton.
     removeBtn.addEventListener("click", () => {
       bookshelf.removeBook();
     });
 
-    li.prepend(removeBtn)
+    li.prepend(removeBtn);
 
     //------------------------------------------------------
     //Comment button
 
-    //Create DOM elements for comment container
+    //Create a DOM elements for a comment container
     const commentContainer = document.createElement("div");
     commentContainer.classList.add("commentContainer");
     li.append(commentContainer);
 
-    // And "comment" button
+    // Create and append a comment button to the container
     const commentBtn = document.createElement("button");
     commentBtn.textContent = "Comment";
-    commentContainer.append(commentBtn);
+    li.append(commentBtn);
 
     // Add an event listener to the comment button
     commentBtn.addEventListener("click", () => {
-      // Reveals a text input element
+      // When clicked, it reveals a text input element
       const commentInputElement = document.createElement("input");
       commentInputElement.placeholder = "Comment";
       commentInputElement.classList.add("commentInputBox");
       commentInputElement.maxLength = 280;
       commentContainer.append(commentInputElement);
 
-      //And a "send" button
+      // Create and append a "send" button
       const sendBtn = document.createElement("button");
       sendBtn.textContent = ">";
       commentContainer.append(sendBtn);
 
       // Add an event listener to the "send" button
       sendBtn.addEventListener("click", () => {
-        //create new comment property to add to comments array in book object
+        // Store the user's input in a variable
         const userInput = commentInputElement.value;
 
         if (userInput.length > 280) {
@@ -124,6 +125,8 @@ function Book(authors, language, subject, title, comments, books) {
         this.render();
       });
     });
+    // NOTE: Comment persistence
+    // Check if this Book's comments property is empty. If not, append this Book's comments to the comment container.
     if (this.comments.length > 0) {
       commentContainer.append(this.comments);
     }
