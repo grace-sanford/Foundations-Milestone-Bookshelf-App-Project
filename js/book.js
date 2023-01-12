@@ -69,9 +69,16 @@ function Book(authors, language, subject, title, comments) {
     //------------------------------------------------------
     // Remove button
 
-    // const removeBtn = document.createElement("button");
-    // removeBtn.textContent = "-";
-    // li.prepend(removeBtn)
+    const removeBtn = document.createElement("button");
+    removeBtn.classList.add(".removeBtn")
+    removeBtn.textContent = "-";
+
+    removeBtn.addEventListener("click", () => {
+      console.log("remove button clicked")
+      
+    });
+
+    li.prepend(removeBtn)
 
     //------------------------------------------------------
     //Comment button

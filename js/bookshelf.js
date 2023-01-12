@@ -106,4 +106,12 @@ function Bookshelf(htmlElement, books = []) {
     this.addBook(newBook)
     this.render();
   };
+
+  /**
+   * Remove book according to it's index
+   */
+  this.removeBook = function (idx, book){
+    this.books.splice(idx, 1)
+    this.render;
+  };
 }
