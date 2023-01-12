@@ -43,7 +43,7 @@ function Bookshelf(htmlElement, books = []) {
    * @param {Book} book
    */
   this.addBook = function (book) {
-    this.books.push(book);
+    this.books.unshift(book);
   };
 
   /**

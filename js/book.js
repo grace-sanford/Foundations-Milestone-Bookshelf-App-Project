@@ -72,7 +72,7 @@ function Book(authors, language, subject, title, comments) {
 
     // Create a DOM remove button element
     const removeBtn = document.createElement("button");
-    removeBtn.textContent = "-";
+    removeBtn.textContent = "Remove";
 
     // Add an event listener to the remove button. When clicked, call the remove book method from the Bookshelf funciton.
     removeBtn.addEventListener("click", () => {
@@ -92,7 +92,7 @@ function Book(authors, language, subject, title, comments) {
     // Create and append a comment button to the container
     const commentBtn = document.createElement("button");
     commentBtn.textContent = "Comment";
-    li.append(commentBtn);
+    commentContainer.append(commentBtn);
 
     // Add an event listener to the comment button
     commentBtn.addEventListener("click", () => {
@@ -121,14 +121,25 @@ function Book(authors, language, subject, title, comments) {
         const comment = document.createElement("div");
         comment.classList.add("comment");
         comment.textContent = userInput;
+
+        //Add user input to the comment container on the DOM
         commentContainer.append(comment);
+        
+        //Remove the text input element and send button on the DOM
+        commentContainer.removeChild(commentInputElement)
+        commentContainer.removeChild(sendBtn)
         this.render();
       });
     });
     // NOTE: Comment persistence
     // Check if this Book's comments property is empty. If not, append this Book's comments to the comment container.
     if (this.comments.length > 0) {
-      commentContainer.append(this.comments);
+      for (let comment of this.comments){
+        const singleComment = document.createElement("li")
+        singleComment.classList.add(".singleComment")
+        singleComment.textContent = comment;
+        commentContainer.append(singleComment); 
+      }
     }
     // Return the list element
     return li;
