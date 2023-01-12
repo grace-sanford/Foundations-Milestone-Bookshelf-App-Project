@@ -73,6 +73,15 @@ function Bookshelf(htmlElement, books = []) {
   };
 
   /**
+   * Count the number of books
+   * @returns the total nummber of books on this Bookshelf
+   */
+
+  this.countTotalBooks = function () {
+    return this.books.length;
+  };
+
+  /**
    * Count the number of favorite books
    * @returns the number of favorite books
    */

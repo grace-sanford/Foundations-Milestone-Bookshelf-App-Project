@@ -15,15 +15,33 @@ bookshelf.seed(bookData);
 //#endregion Initialization
 
 // --------------------------
+//#region Total Books Feature
+// --------------------------
+// Create DOM elements
+
+const totalBooksCount = document.querySelector(".totalBooks")
+const totalBooksBtn = document.querySelector(".totalBooksBtn");
+
+
+totalBooksBtn.addEventListener("click", () => {
+  totalBooksCount.textContent = bookshelf.countTotalBooks()
+});
+
+
+
+//#endregion Total Books Feature
+
+
+// --------------------------
 //#region Favorite Feature
 // --------------------------
 
 // Create DOM elements 
 const favCount = document.querySelector(".favCount");
-const updateBtn = document.querySelector(".favUpdateBtn");
+const updateFavoriteBooksBtn = document.querySelector(".favUpdateBtn");
 
 // Add an event listener to the update button so that when it's clicked, the function countFavoriteBooks is called on bookshelf and added to the DOM
-updateBtn.addEventListener("click", () => {
+updateFavoriteBooksBtn.addEventListener("click", () => {
   favCount.textContent = bookshelf.countFavoriteBooks();
 });
 
