@@ -59,7 +59,17 @@ a:active {
   font-family: "Lora", serif;
 }
 
-/* Styling for user input portion of the page */
+/* Color for the favorite count and total count */
+
+.totalBooks {
+  background-color:#94a686;
+}
+
+.favCount {
+  background-color: rgb(255, 21, 0);
+}
+
+/* Styling for app section of the page */
 
 .addBooks {
   display: flex;
@@ -84,7 +94,8 @@ a:active {
     font-family: "Lora", serif;
   }
 
-  /* styling for horizontal footer */
+
+  /* Styling for horizontal footer */
 .footer {
   display: flex;
   margin-top: auto;
