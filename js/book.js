@@ -68,12 +68,16 @@ function Book(authors, language, subject, title) {
 
     //------------------------------------------------------
     //Remove button
-    const removeBtn = document.createElement("button");
-    removeBtn.textContent = "-";
-    removeBtn.addEventListener("click", () => {
-      //Remove link and re-render
-    });
-    li.prepend(removeBtn);
+
+    // const removeBtn = document.createElement("button");
+    // removeBtn.textContent = "-";
+
+    // removeBtn.addEventListener("click", () => {
+    //   //Remove link and re-render
+    //   const idx = books.indexOf(books)
+    //   books.splice(idx, 1)
+    // });
+    // li.prepend(removeBtn);
 
     //------------------------------------------------------
     //Comment button

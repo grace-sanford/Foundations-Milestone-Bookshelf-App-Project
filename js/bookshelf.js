@@ -25,6 +25,7 @@ function Bookshelf (htmlElement, books = []) {
           bookInfo.language,
           bookInfo.subject,
           bookInfo.title,
+          bookInfo.comments,
         );
         this.addBook(book);
       });
@@ -77,7 +78,7 @@ function Bookshelf (htmlElement, books = []) {
      */
     this.filterVisibleBooks = function (criteria) {
       // Call filter method on books arrray, to filter visible books according to a certain criteria
-      this.visibleBooks = this.books.filter(criteria);
+      this.visibleBooks = this.books.filter(criteria)
       this.render();
     };
   
@@ -86,7 +87,7 @@ function Bookshelf (htmlElement, books = []) {
      * @param {(a: Book, b: Book) => number} compareFn
      */
     this.sortVisibleBooks = function (compareFn) {
-      // Call sort method on books array, to sort visible books accordign to a certain compare function
+      // Call sort method on books array, to sort visible books according to a certain compare function
       this.visibleBooks.sort(compareFn);
       this.render();
     };

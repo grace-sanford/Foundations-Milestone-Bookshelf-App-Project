@@ -61,6 +61,7 @@ sortBy.addEventListener("change", () => {
   }
 
   bookshelf.sortVisibleBooks(sortFn);
+
 });
 
 //#endregion Sorting
@@ -69,121 +70,120 @@ sortBy.addEventListener("change", () => {
 
 
 
-// --------------------------
-//#region Add and remove books
-// --------------------------
+// // --------------------------
+// //#region Add and remove books
+// // --------------------------
 
-//Select DOM elements
-const bookTitle = document.querySelector(".title");
-const bookAuthor = document.querySelector(".author");
-const bookLanguage = document.querySelector(".language");
-const bookSubject = document.querySelector(".subject");
+// //Select DOM elements
+// const bookTitle = document.querySelector(".title");
+// const bookAuthor = document.querySelector(".author");
+// const bookLanguage = document.querySelector(".language");
+// const bookSubject = document.querySelector(".subject");
 
-const addBtn = document.querySelector(".addBtn");
-// const bookshelfElement = document.querySelector(".books");
+// const addBtn = document.querySelector(".addBtn");
+// // const bookshelfElement = document.querySelector(".books");
 
-/**
- * `createPropertyElement takes an object representing the user's input and an index and returns a correspoing html element.
- */
+// /**
+//  * `createPropertyElement takes an object representing the user's input and an index and returns a correspoing html element.
+//  */
 
-const createBookshelfElement = (property, i) => {
-  // //Create li list element
-  // const li = document.createElement("li");
-  // li.classList.add("book");
+// const createBookshelfElement = (property, i) => {
+//   // //Create li list element
+//   // const li = document.createElement("li");
+//   // li.classList.add("book");
 
-  // //Create a link with the name
-  // const book = document.createElement("a");
-  // book.textContent = `${book.title}:`
-  // li.append(book);
+//   // //Create a link with the name
+//   // const book = document.createElement("a");
+//   // book.textContent = `${book.title}:`
+//   // li.append(book);
 
   
 
-  // //Remove btn
+//   // //Remove btn
 
-  // const removeBtn = document.createElement("button");
-  // removeBtn.textContent = "-";
-  // removeBtn.addEventListener("click", () => {
-  //   //Remove link and re-render
-  //   propertyData.splice(i, 1);
-  //   bookshelf();
-  // });
-  // li.prepend(removeBtn);
+//   // const removeBtn = document.createElement("button");
+//   // removeBtn.textContent = "-";
+//   // removeBtn.addEventListener("click", () => {
+//   //   //Remove link and re-render
+//   //   propertyData.splice(i, 1);
+//   //   bookshelf();
+//   // });
+//   // li.prepend(removeBtn);
 
-  // //Comment button
+//   // //Comment button
 
-  // const commentBtn = document.createElement("button");
-  // commentBtn.textContent = "Comment";
+//   // const commentBtn = document.createElement("button");
+//   // commentBtn.textContent = "Comment";
 
-  // const commentContainer = document.createElement("div");
-  // commentContainer.append(commentBtn);
-  // li.append(commentContainer);
+//   // const commentContainer = document.createElement("div");
+//   // commentContainer.append(commentBtn);
+//   // li.append(commentContainer);
 
-  // // Add an event listener to the comment button
-  // commentBtn.addEventListener("click", () => {
-  //   //reveals a text input element
-  //   const commentInputElement = document.createElement("input");
-  //   commentInputElement.placeholder = "Comment";
-  //   commentInputElement.classList.add("commentInput");
-  //   commentInputElement.maxLength = 280;
-  //   commentContainer.append(commentInputElement);
+//   // // Add an event listener to the comment button
+//   // commentBtn.addEventListener("click", () => {
+//   //   //reveals a text input element
+//   //   const commentInputElement = document.createElement("input");
+//   //   commentInputElement.placeholder = "Comment";
+//   //   commentInputElement.classList.add("commentInput");
+//   //   commentInputElement.maxLength = 280;
+//   //   commentContainer.append(commentInputElement);
 
-  //   //and a "send button"
-  //   const sendBtn = document.createElement("button");
-  //   sendBtn.textContent = ">";
-  //   commentContainer.append(sendBtn);
+//   //   //and a "send button"
+//   //   const sendBtn = document.createElement("button");
+//   //   sendBtn.textContent = ">";
+//   //   commentContainer.append(sendBtn);
 
-  //   sendBtn.addEventListener("click", () => {
-  //     //create new property to add to property objects in array
-  //     const comment = commentInputElement.value;
+//   //   sendBtn.addEventListener("click", () => {
+//   //     //create new property to add to property objects in array
+//   //     const comment = commentInputElement.value;
 
-  //     if (comment.length > 280) {
-  //       alert("Comment is too long!");
-  //     }
+//   //     if (comment.length > 280) {
+//   //       alert("Comment is too long!");
+//   //     }
   
-  //     book.comment = comment;
-  //     console.log(bookData)
-  //     renderNewBooks();
-  //   });
-  // });
+//   //     book.comment = comment;
+//   //     console.log(bookData)
+//   //     renderNewBooks();
+//   //   });
+//   // });
 
-  return li;
-};
+//   return li;
+// };
 
-//#endregion STATE MANAGEMENT
+// //#endregion STATE MANAGEMENT
 
-//================================================
-//#region RENDERING
-//================================================
+// //================================================
+// //#region RENDERING
+// //================================================
 
-/**
- * `renderProperties` renders a property element for each property in propertyData, and re-renders the screen.
- */
+// /**
+//  * `renderProperties` renders a property element for each property in propertyData, and re-renders the screen.
+//  */
 
-const renderNewBooks = () => {
-  const bookElements = bookData.map(createBookshelfElement);
-  console.log(bookElements)
-  bookshelfElement.replaceChildren(...bookElements);
-};
+// const renderNewBooks = () => {
+//   const bookElements = bookData.map(createBookshelfElement);
+//   console.log(bookElements)
+//   bookshelfElement.replaceChildren(...bookElements);
+// };
 
-/**
- * `addBtn` Event Listener creates and then adds a new property object to propertyData array when the addBtn is clicked, and then refreshes the page again.
- */
+// /**
+//  * `addBtn` Event Listener creates and then adds a new property object to propertyData array when the addBtn is clicked, and then refreshes the page again.
+//  */
 
-addBtn.addEventListener("click", () => {
-  //const userInput = getProperty();
+// addBtn.addEventListener("click", () => {
+//   //const userInput = getProperty();
 
-  const author = [bookAuthor.value];
-  const language = bookLanguage.value;
-  const subject = [bookSubject.value];
-  const title = bookTitle.value;
+//   const author = [bookAuthor.value];
+//   const language = bookLanguage.value;
+//   const subject = [bookSubject.value];
+//   const title = bookTitle.value;
 
 
-  if (!title || !author || !language || !subject) {
-    alert("Form incomplete. Please try again.");
-    return;
-  }
-  //add new object to the propertyData array
-  bookData.push({ author, language, subject, title });
-  bookshelf.render()
-  console.log(bookData)
-});
+//   if (!title || !author || !language || !subject) {
+//     alert("Form incomplete. Please try again.");
+//     return;
+//   }
+//   //add new object to the propertyData array
+//   bookData.push({ author, language, subject, title });
+//   console.log(bookData)
+// });
