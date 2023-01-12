@@ -28,7 +28,7 @@ updateBtn.addEventListener("click", () => {
 // --------------------------
 //#region Searching
 // --------------------------
-// Create DOM elements for the nav input and search button 
+// Create DOM elements for the nav input and search button
 const searchInput = document.querySelector("nav input"); //TO DO: how does it know what nav input is?
 const searchBtn = document.querySelector(".searchBtn");
 
@@ -37,6 +37,7 @@ const searchBtn = document.querySelector(".searchBtn");
 searchBtn.addEventListener("click", () => {
   const query = searchInput.value.toLowerCase();
   const searchFn = (b) => b.title.toLowerCase().includes(query);
+
   bookshelf.filterVisibleBooks(searchFn);
 });
 
@@ -61,18 +62,35 @@ sortBy.addEventListener("change", () => {
   }
 
   bookshelf.sortVisibleBooks(sortFn);
-
 });
 
 //#endregion Sorting
 
-
-
-
-
 // // --------------------------
-// //#region Add and remove books
+// //#region Add books
 // // --------------------------
+
+//Select DOM elements
+const bookTitle = document.querySelector(".title");
+const bookAuthor = document.querySelector(".author");
+const bookLanguage = document.querySelector(".language");
+const bookSubject = document.querySelector(".subject");
+
+const addBtn = document.querySelector(".addBtn");
+
+/**
+ * `addBtn` Event Listener creates and then adds a new property object to propertyData array when the addBtn is clicked, and then refreshes the page again.
+ */
+
+addBtn.addEventListener("click", () => {
+  if (!bookTitle.value || !bookAuthor.value || !bookLanguage.value || !bookSubject.value) {
+    alert("Form incomplete. Please try again.");
+    return;
+  }
+  bookshelf.createNewBook();
+});
+
+//#endregion Add books
 
 // //Select DOM elements
 // const bookTitle = document.querySelector(".title");
@@ -96,8 +114,6 @@ sortBy.addEventListener("change", () => {
 //   // const book = document.createElement("a");
 //   // book.textContent = `${book.title}:`
 //   // li.append(book);
-
-  
 
 //   // //Remove btn
 
@@ -140,7 +156,7 @@ sortBy.addEventListener("change", () => {
 //   //     if (comment.length > 280) {
 //   //       alert("Comment is too long!");
 //   //     }
-  
+
 //   //     book.comment = comment;
 //   //     console.log(bookData)
 //   //     renderNewBooks();
@@ -165,25 +181,3 @@ sortBy.addEventListener("change", () => {
 //   console.log(bookElements)
 //   bookshelfElement.replaceChildren(...bookElements);
 // };
-
-// /**
-//  * `addBtn` Event Listener creates and then adds a new property object to propertyData array when the addBtn is clicked, and then refreshes the page again.
-//  */
-
-// addBtn.addEventListener("click", () => {
-//   //const userInput = getProperty();
-
-//   const author = [bookAuthor.value];
-//   const language = bookLanguage.value;
-//   const subject = [bookSubject.value];
-//   const title = bookTitle.value;
-
-
-//   if (!title || !author || !language || !subject) {
-//     alert("Form incomplete. Please try again.");
-//     return;
-//   }
-//   //add new object to the propertyData array
-//   bookData.push({ author, language, subject, title });
-//   console.log(bookData)
-// });

@@ -7,7 +7,7 @@
  * @param {boolean} favorite user's opinion about the book
  * @param {string []} comments array of comments about the book
  */
-function Book(authors, language, subject, title) {
+function Book(authors, language, subject, title, comments) {
   this.authors = authors;
   this.language = language;
   this.subject = subject;
@@ -67,43 +67,40 @@ function Book(authors, language, subject, title) {
     });
 
     //------------------------------------------------------
-    //Remove button
+    // Remove button
 
     // const removeBtn = document.createElement("button");
     // removeBtn.textContent = "-";
-
-    // removeBtn.addEventListener("click", () => {
-    //   //Remove link and re-render
-    //   const idx = books.indexOf(books)
-    //   books.splice(idx, 1)
-    // });
-    // li.prepend(removeBtn);
+    // li.prepend(removeBtn)
 
     //------------------------------------------------------
     //Comment button
 
-    const commentBtn = document.createElement("button");
-    commentBtn.textContent = "Comment";
-
+    //Create DOM elements for comment container
     const commentContainer = document.createElement("div");
     commentContainer.classList.add("commentContainer");
-    commentContainer.append(commentBtn);
     li.append(commentContainer);
+
+    // And "comment" button
+    const commentBtn = document.createElement("button");
+    commentBtn.textContent = "Comment";
+    commentContainer.append(commentBtn);
 
     // Add an event listener to the comment button
     commentBtn.addEventListener("click", () => {
-      //reveals a text input element
+      // Reveals a text input element
       const commentInputElement = document.createElement("input");
       commentInputElement.placeholder = "Comment";
-      commentInputElement.classList.add("commentInput");
+      commentInputElement.classList.add("commentInputBox");
       commentInputElement.maxLength = 280;
       commentContainer.append(commentInputElement);
 
-      //and a "send button"
+      //And a "send" button
       const sendBtn = document.createElement("button");
       sendBtn.textContent = ">";
       commentContainer.append(sendBtn);
 
+      // Add an event listener to the "send" button
       sendBtn.addEventListener("click", () => {
         //create new comment property to add to comments array in book object
         const userInput = commentInputElement.value;
@@ -111,15 +108,18 @@ function Book(authors, language, subject, title) {
         if (userInput.length > 280) {
           alert("Input is too long!");
         }
-        this.comments.push(userInput);
 
-        const comment = document.createElement("p");
-        comment.classList.add("comments");
+        this.comments.push(userInput);
+        const comment = document.createElement("div");
+        comment.classList.add("comment");
         comment.textContent = userInput;
         commentContainer.append(comment);
+        this.render();
       });
     });
-
+    if (this.comments.length > 0) {
+      commentContainer.append(this.comments);
+    }
     // Return the list element
     return li;
   };
