@@ -7,13 +7,14 @@
  * @param {boolean} favorite user's opinion about the book
  * @param {string []} comments array of comments about the book
  */
-function Book(authors, language, subject, title, comments) {
+function Book(authors, language, subject, title, comments, books) {
   this.authors = authors;
   this.language = language;
   this.subject = subject;
   this.title = title;
   this.isFavorite = false;
   this.comments = [];
+  this.books = books;
 
   /**
    * * `getAuthorName()` takes an array containing the author's last name followed by a comma, followed by the author's first name.
@@ -74,8 +75,7 @@ function Book(authors, language, subject, title, comments) {
     removeBtn.textContent = "-";
 
     removeBtn.addEventListener("click", () => {
-      console.log("remove button clicked")
-      
+      bookshelf.removeBook();
     });
 
     li.prepend(removeBtn)

@@ -45,6 +45,15 @@ function Bookshelf(htmlElement, books = []) {
   };
 
   /**
+   * Remove book according to it's index
+   */
+  this.removeBook = function (book) {
+    const idx = this.books[book];
+    this.books.splice(idx, 1);
+    this.render();
+  };
+
+  /**
    * Use internal Book array to rerender the
    * existing DOM element for this Bookshelf.
    */
@@ -94,24 +103,16 @@ function Bookshelf(htmlElement, books = []) {
 
   /**
    * Create new book based on user input
-   * @param {(Book)} book 
+   * @param {(Book)} book
    */
   this.createNewBook = function (book) {
-    const newBook = new Book (
-    author = bookAuthor.value,
-    language = bookLanguage.value,
-    subject = bookSubject.value,
-    title = bookTitle.value
+    const newBook = new Book(
+      (author = bookAuthor.value),
+      (language = bookLanguage.value),
+      (subject = bookSubject.value),
+      (title = bookTitle.value)
     );
-    this.addBook(newBook)
+    this.addBook(newBook);
     this.render();
-  };
-
-  /**
-   * Remove book according to it's index
-   */
-  this.removeBook = function (idx, book){
-    this.books.splice(idx, 1)
-    this.render;
   };
 }

@@ -66,9 +66,9 @@ sortBy.addEventListener("change", () => {
 
 //#endregion Sorting
 
-// // --------------------------
-// //#region Add books
-// // --------------------------
+// --------------------------
+//#region Add books
+// --------------------------
 
 //Select DOM elements
 const bookTitle = document.querySelector(".title");
@@ -91,6 +91,17 @@ addBtn.addEventListener("click", () => {
 });
 
 //#endregion Add books
+
+// --------------------------
+//#region Remove books
+// --------------------------
+
+// const removeBtn = document.querySelector(".removeBtn")
+
+
+
+
+//#endregion Remove books
 
 // //Select DOM elements
 // const bookTitle = document.querySelector(".title");
