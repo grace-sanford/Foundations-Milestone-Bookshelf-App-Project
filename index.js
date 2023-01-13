@@ -27,8 +27,6 @@ totalBooksBtn.addEventListener("click", () => {
   totalBooksCount.textContent = bookshelf.countTotalBooks()
 });
 
-
-
 //#endregion Total Books Feature
 
 
@@ -48,17 +46,28 @@ updateFavoriteBooksBtn.addEventListener("click", () => {
 //#endregion Favorite Feature
 
 // --------------------------
-//#region 
+//#region nonEnglishBooks Feature
 // --------------------------
 
+// Create DOM elements
 const nonEnglishBooks = document.querySelector(".nonEnglishBooks")
 const updateEnglishBooksBtn = document.querySelector(".nonEnglishBooksBtn")
 
+// Add an event listener to update button so that when clicked, the function returns non-English Book Count
 updateEnglishBooksBtn.addEventListener("click", () => {
   nonEnglishBooks.textContent = bookshelf.countNonEnglishBooks();
 });
 
-//#endregion 
+//#endregion nonEnglishBooks Feature
+
+// --------------------------
+//#region Average Number of Subjects Per Book Feature
+// --------------------------
+// Create DOM elements
+const avgSubjectsPerBook = document.querySelector(".avgSubjectsPerBook")
+const avgSubjectsPerBookText = document.querySelector(".avgSubjectsPerBookText")
+avgSubjectsPerBookText.textContent = `${bookshelf.getAverageNumberOfSubjectsPerBook()}`
+//#endregion
 
 // --------------------------
 //#region Searching

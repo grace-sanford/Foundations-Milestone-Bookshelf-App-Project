@@ -15,6 +15,12 @@ function Book(authors, language, subject, title, comments) {
   this.title = title;
   this.isFavorite = false;
   this.comments = [];
+  this.numPages = Math.floor(Math.random() * 301) + 50;
+  this.category = "novel";
+
+  if (this.numPages < 100){
+    this.category = "short story"
+  };
 
   /**
    * * `getAuthorName()` takes an array containing the author's last name followed by a comma, followed by the author's first name.

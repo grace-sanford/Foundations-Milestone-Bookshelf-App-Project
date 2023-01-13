@@ -8,11 +8,16 @@
     <!-- Link to CSS style sheet -->
     <link rel="stylesheet" href="index.css" />
     <!-- Link font style -->
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- User Interface/Input Portion of the Page -->
-    <nav>
+    <nav class="nav">
       <h1 class="header">Bookshelf for Learning</h1>
       <header class="links">
         <a class="link" href="index.html">Home</a>
@@ -38,16 +43,21 @@
         </select>
       </section>
       <section>
-        You have <span class ="totalBooks">142</span> total books on your bookshelf.
-        <button class ="totalBooksBtn">Update</button>
+        You have <span class="totalBooks">142</span> total books on your
+        bookshelf.
+        <button class="totalBooksBtn">Update</button>
       </section>
       <section>
-        You have <span class = "nonEnglishBooks">0</span> non-English books on your bookshelf.
-        <button class = "nonEnglishBooksBtn">Update</button>
+        You have <span class="nonEnglishBooks">0</span> non-English books on
+        your bookshelf.
+        <button class="nonEnglishBooksBtn">Update</button>
       </section>
       <section>
         You have <span class="favCount">0</span> favorite books.
         <button class="favUpdateBtn">Update</button>
+      </section>
+      <section class = "avgSubjectsPerBook">
+        On average, there are <span class = "avgSubjectsPerBookText"></span> subjects per book on your bookshelf.
       </section>
     </nav>
     <!-- Library, book list Portion of the Page -->

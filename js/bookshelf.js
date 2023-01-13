@@ -5,7 +5,7 @@
  * @param {Book[]} books an optional array of Books
  */
 
-// A constructor function accepts arguments, but does not RETURN anything. 
+// A constructor function accepts arguments, but does not RETURN anything.
 // It uses `this` to define properties and methods. We use the `new` keyword to use this function.
 // It takes parameters in the same way a class does, through its constructor.
 
@@ -93,13 +93,34 @@ function Bookshelf(htmlElement, books = []) {
     );
   };
 
+  /**
+   * Count the number of favorite books
+   * @returns the number of favorite books
+   */
   this.countNonEnglishBooks = function () {
     // Use reduce to count the books for which the language property is NOT "en". Return the count.
     return this.books.reduce(
-      (count, book) => (book.language === "en" ? count : count + 1), 0
+      (count, book) => (book.language === "en" ? count : count + 1),
+      0
     );
   };
 
+  /**
+   * Get the average number of subjects per Book in the Bookshelf
+   * @returns the average number of subjects per Book in the Bookshelf
+   */
+
+  this.getAverageNumberOfSubjectsPerBook = function () {
+    let total = 0;
+    // Use for each to store the number of subjects for each book on the Bookshelf.
+    this.books.forEach((book, numSubjects) => {
+      numSubjects = book.subject.length - 1;
+      total += numSubjects;
+    });
+    // Divide total by the total number of books. Return.
+    let average = total / this.countTotalBooks();
+    return average.toFixed(2)
+  };
 
   /**
    * Filter visible books according to a given criteria function

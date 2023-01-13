@@ -73,6 +73,10 @@ a:active {
   background-color: rgb(102, 235, 235);
 }
 
+.avgSubjectsPerBookText {
+  background-color: #e5ed52;
+}
+
 /* Styling for app section of the page */
 
 .addBooks {
