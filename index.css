@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
 
 /* Basic styling for the website */
-
 nav {
   display: flex;
   flex-direction: column;
@@ -60,7 +59,6 @@ a:active {
 }
 
 /* Color for the favorite count and total count */
-
 .totalBooks {
   background-color:#94a686;
 }
@@ -78,7 +76,6 @@ a:active {
 }
 
 /* Styling for app section of the page */
-
 .addBooks {
   display: flex;
   gap: 0.2rem;
