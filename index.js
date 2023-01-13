@@ -103,9 +103,13 @@ sortBy.addEventListener("change", () => {
     sortFn = (a, z) => a.title.localeCompare(z.title);
   } else if (query === "titleza") {
     sortFn = (a, z) => z.title.localeCompare(a.title);
+  } else if (query === "favorites"){
+    sortFn = (b) => b.isFavorite === true;
+    bookshelf.filterVisibleBooks(sortFn)
   }
 
   bookshelf.sortVisibleBooks(sortFn);
+
 });
 
 //#endregion Sorting
