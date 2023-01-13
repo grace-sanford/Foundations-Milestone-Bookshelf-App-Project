@@ -48,6 +48,19 @@ updateFavoriteBooksBtn.addEventListener("click", () => {
 //#endregion Favorite Feature
 
 // --------------------------
+//#region 
+// --------------------------
+
+const nonEnglishBooks = document.querySelector(".nonEnglishBooks")
+const updateEnglishBooksBtn = document.querySelector(".nonEnglishBooksBtn")
+
+updateEnglishBooksBtn.addEventListener("click", () => {
+  nonEnglishBooks.textContent = bookshelf.countNonEnglishBooks();
+});
+
+//#endregion 
+
+// --------------------------
 //#region Searching
 // --------------------------
 // Create DOM elements 

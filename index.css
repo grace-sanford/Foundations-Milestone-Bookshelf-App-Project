@@ -69,6 +69,10 @@ a:active {
   background-color: rgb(255, 21, 0);
 }
 
+.nonEnglishBooks {
+  background-color: rgb(102, 235, 235);
+}
+
 /* Styling for app section of the page */
 
 .addBooks {

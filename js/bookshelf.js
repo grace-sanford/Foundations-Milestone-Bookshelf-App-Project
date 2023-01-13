@@ -93,6 +93,14 @@ function Bookshelf(htmlElement, books = []) {
     );
   };
 
+  this.countNonEnglishBooks = function () {
+    // Use reduce to count the books for which the language property is NOT "en". Return the count.
+    return this.books.reduce(
+      (count, book) => (book.language === "en" ? count : count + 1), 0
+    );
+  };
+
+
   /**
    * Filter visible books according to a given criteria function
    * @param {(book: Book) => boolean} criteria
